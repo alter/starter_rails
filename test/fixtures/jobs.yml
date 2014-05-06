@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  territory: 
+  jobtype: 
+  server: 
+  is_running: 
+  is_finished_correctly: false
+
+two:
+  territory: 
+  jobtype: 
+  server: 
+  is_running: 
+  is_finished_correctly: false

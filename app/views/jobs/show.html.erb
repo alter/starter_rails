@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Territory:</strong>
+  <%= @job.territory %>
+</p>
+
+<p>
+  <strong>Jobtype:</strong>
+  <%= @job.jobtype %>
+</p>
+
+<p>
+  <strong>Server:</strong>
+  <%= @job.server %>
+</p>
+
+<p>
+  <strong>Is running:</strong>
+  <%= @job.is_running %>
+</p>
+
+<p>
+  <strong>Is finished correctly:</strong>
+  <%= @job.is_finished_correctly %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>
