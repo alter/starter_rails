@@ -1,9 +1,9 @@
 class CreateJobs < ActiveRecord::Migration
   def change
     create_table :jobs do |t|
-      t.belongs_to :territory
-      t.belongs_to :jobtype
-      t.belongs_to :server
+      t.references :territory
+      t.references :jobtype
+      t.references :server
       t.boolean :is_running, default: :false
       t.boolean :is_finished_correctly
 

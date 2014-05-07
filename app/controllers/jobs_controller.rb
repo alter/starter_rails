@@ -28,7 +28,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
+        format.html { redirect_to home_tasks_path, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
         format.html { render :new }
@@ -69,6 +69,6 @@ class JobsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
-      params.require(:job).permit(:territory, :jobtype, :server, :is_running, :is_finished_correctly)
+      params.require(:job).permit(:territory_id, :jobtype_id, :server_id, :is_running, :is_finished_correctly, :version)
     end
 end

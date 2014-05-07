@@ -1,0 +1,18 @@
+<div id="new_form">
+<%= form_tag(controller: "jobs", action: "create", method: "post") do %>
+  <h2>Choose Territory</h2>
+  <%= collection_select(:job, :territory_id, Territory.all, :id, :name) %>
+
+  <h2>Choose Server</h2>
+  <%= collection_select(:job, :server_id, Server.all, :id, :name) %>
+
+  <h2>Choose Job type</h2>
+  <%= collection_select(:job, :jobtype_id, Jobtype.all, :id, :name) %>
+
+  <h2>Enter Version</h2>
+  <%= text_field(:job, :version, size: 12) %>
+  <p>
+    <%=  submit_tag("Add Job") %>
+  </p>
+<% end %>
+</div>

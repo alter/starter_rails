@@ -1,33 +1,32 @@
-<%= form_for(@server) do |f| %>
-  <% if @server.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@server.errors.count, "error") %> prohibited this server from being saved:</h2>
-
-      <ul>
-      <% @server.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<%= form_for @server, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :ip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ip, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :login, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :login, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :gptlauncher_path, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :gptlauncher_path, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :ip %><br>
-    <%= f.text_field :ip %>
-  </div>
-  <div class="field">
-    <%= f.label :login %><br>
-    <%= f.text_field :login %>
-  </div>
-  <div class="field">
-    <%= f.label :gptlauncher_path %><br>
-    <%= f.text_field :gptlauncher_path %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                servers_path, :class => 'btn' %>
   </div>
 <% end %>
