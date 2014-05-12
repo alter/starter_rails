@@ -11,6 +11,7 @@
       <th><%= model_class.human_attribute_name(:server_id) %></th>
       <th><%= model_class.human_attribute_name(:is_running) %></th>
       <th><%= model_class.human_attribute_name(:is_finished_correctly) %></th>
+      <th><%= model_class.human_attribute_name(:version) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -24,7 +25,8 @@
         <td><%= job.server_id %></td>
         <td><%= job.is_running %></td>
         <td><%= job.is_finished_correctly %></td>
-        <td><%=l job.created_at %></td>
+        <td><%= job.version %></td>
+        <td><%= job.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_job_path(job), :class => 'btn btn-mini' %>

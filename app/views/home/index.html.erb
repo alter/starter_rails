@@ -1,3 +1,14 @@
+<% if @job.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@job.errors.count, "error") %></h2>
+    <ul>
+      <% @job.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div id="new_form">
 <%= form_tag(controller: "jobs", action: "create", method: "post") do %>
   <h2>Choose Territory</h2>

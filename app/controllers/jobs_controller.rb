@@ -29,7 +29,7 @@ class JobsController < ApplicationController
     respond_to do |format|
       if @job.save
         flash[:success] = 'Job was successfully created.'
-        format.html { redirect_to home_tasks_url }
+        format.html { redirect_to jobs_path }
         format.json { render :show, status: :created, location: @job }
       else
         flash[:error] = 'Please fill all fields correctly !!'
