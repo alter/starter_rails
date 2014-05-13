@@ -28,6 +28,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
+        id = JobsWorker.perform_async(@job.id, @job.server.id)
         flash[:success] = 'Job was successfully created.'
         format.html { redirect_to jobs_path }
         format.json { render :show, status: :created, location: @job }
@@ -66,11 +67,18 @@ class JobsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_job
-      @job = Job.find(params[:id])
+      job_max_id = Job.all.maximum(:id).to_i
+      job_min_id = Job.all.minimum(:id).to_i
+      if params[:id].to_i >= job_min_id && params[:id].to_i <= job_max_id
+        @job = Job.find(params[:id])
+      else
+        redirect_to jobs_path
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def job_params
       params.require(:job).permit(:territory_id, :jobtype_id, :server_id, :is_running, :is_finished_correctly, :version)
     end
+
 end

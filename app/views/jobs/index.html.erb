@@ -20,9 +20,9 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= link_to job.id, job_path(job) %></td>
-        <td><%= job.territory_id %></td>
-        <td><%= job.jobtype_id %></td>
-        <td><%= job.server_id %></td>
+        <td><%= job.territory.name %></td>
+        <td><%= job.jobtype.name %></td>
+        <td><%= job.server.name %></td>
         <td><%= job.is_running %></td>
         <td><%= job.is_finished_correctly %></td>
         <td><%= job.version %></td>

@@ -39,3 +39,5 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.3'
 gem "less-rails"
 gem 'twitter-bootstrap-rails'
+
+gem 'sidekiq'

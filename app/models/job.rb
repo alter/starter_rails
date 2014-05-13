@@ -5,4 +5,5 @@ class Job < ActiveRecord::Base
 
   validates :territory_id, :jobtype_id, :server_id, :version, presence: true
   validates :version, format: { with: /[0-9]\.[0-9]\.[0-9]{2}\.[0-9]{1,3}(\.[0-9]{1,3})?/, message: "Version number have to contains from numbers and '.' only !"}
+
 end
