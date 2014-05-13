@@ -5,6 +5,11 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    if @jobs.empty?
+      flash[:notice] = 'There are no jobs !'
+      redirect_to root_path
+    end
+
   end
 
   # GET /jobs/1

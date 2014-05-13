@@ -5,13 +5,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:territory_id) %></th>
       <th><%= model_class.human_attribute_name(:jobtype_id) %></th>
       <th><%= model_class.human_attribute_name(:server_id) %></th>
       <th><%= model_class.human_attribute_name(:is_running) %></th>
       <th><%= model_class.human_attribute_name(:is_finished_correctly) %></th>
       <th><%= model_class.human_attribute_name(:version) %></th>
+      <th><%= model_class.human_attribute_name(:fail_reason) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -19,13 +19,13 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= link_to job.id, job_path(job) %></td>
-        <td><%= job.territory.name %></td>
+        <td><%= link_to job.territory.name, job_path(job) %></td>
         <td><%= job.jobtype.name %></td>
         <td><%= job.server.name %></td>
         <td><%= job.is_running %></td>
         <td><%= job.is_finished_correctly %></td>
         <td><%= job.version %></td>
+        <td><%= job.fail_reason %></td>
         <td><%= job.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
