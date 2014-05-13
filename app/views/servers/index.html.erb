@@ -8,6 +8,7 @@
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:ip) %></th>
+      <th><%= model_class.human_attribute_name(:port) %></th>
       <th><%= model_class.human_attribute_name(:login) %></th>
       <th><%= model_class.human_attribute_name(:gptlauncher_path) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -20,6 +21,7 @@
         <td><%= link_to server.id, server_path(server) %></td>
         <td><%= server.name %></td>
         <td><%= server.ip %></td>
+        <td><%= server.port %></td>
         <td><%= server.login %></td>
         <td><%= server.gptlauncher_path %></td>
         <td><%=l server.created_at %></td>

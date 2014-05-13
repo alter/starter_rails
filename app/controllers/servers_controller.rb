@@ -69,6 +69,6 @@ class ServersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def server_params
-      params.require(:server).permit(:name, :ip, :login, :gptlauncher_path)
+      params.require(:server).permit(:name, :ip, :login, :gptlauncher_path, :port)
     end
 end

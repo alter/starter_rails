@@ -28,8 +28,6 @@
         <td><%= job.fail_reason %></td>
         <td><%= job.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_job_path(job), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       job_path(job),
                       :method => :delete,
@@ -40,7 +38,3 @@
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_job_path,
-            :class => 'btn btn-primary' %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513015633) do
+ActiveRecord::Schema.define(version: 20140513022607) do
 
   create_table "jobs", force: true do |t|
     t.integer  "territory_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20140513015633) do
     t.string   "gptlauncher_path"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "port",             default: 22
   end
 
   create_table "territories", force: true do |t|
