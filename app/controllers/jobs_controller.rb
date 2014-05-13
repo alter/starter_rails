@@ -33,7 +33,7 @@ class JobsController < ApplicationController
 
     respond_to do |format|
       if @job.save
-        id = JobsWorker.perform_async(@job.id, @job.server.id)
+        JobsWorker.perform_async(@job.id, @job.server.id)
         flash[:success] = 'Job was successfully created.'
         format.html { redirect_to jobs_path }
         format.json { render :show, status: :created, location: @job }

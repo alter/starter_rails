@@ -13,7 +13,7 @@ class JobsWorker
         logger.info "Exit Status: #{wait_thr.value}"
         logger.info "STDOUT: #{out.read}"
         logger.error "STDERR: #{err.read}"
-        job.fail_reason = err.read
+        job.fail_reason = err.read.to_s
         if wait_thr.value == 0
           puts "Current deploy with version #{job.version} just finished in the server #{server.name}"
           job.is_finished_correctly = true
