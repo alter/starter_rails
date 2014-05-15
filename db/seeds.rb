@@ -15,7 +15,7 @@ Server.delete_all
 Server.create!(name: 'm100',
   ip: '192.168.198.66',
   login: 'a1',
-  gptlauncher_path: '/home/a1/GPT_Launcher'
+  gptlauncher_path: '/home/a1/GPT_Launcher/'
 )
 
 Server.create!(name: 'Bart',
