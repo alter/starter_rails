@@ -20,13 +20,13 @@ Server.create!(name: 'm100',
 
 Server.create!(name: 'Bart',
                ip: '195.211.130.227',
-               login: 'a1',
+               login: 'allods',
                gptlauncher_path: '/home/allods/GPT_launcher/'
 )
 
 Server.create!(name: 'Lisa',
                ip: '195.211.130.227',
-               login: 'a1',
+               login: 'allods',
                gptlauncher_path: '/home/allods/GPT_launcher/'
 )
 
