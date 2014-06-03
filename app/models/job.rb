@@ -8,4 +8,7 @@ class Job < ActiveRecord::Base
   validates :territory_id, inclusion: Territory.ids
   validates :jobtype_id, inclusion: Jobtype.ids
   validates :server_id, inclusion: Server.ids
+
+  after_commit(:on => :create)
+ 
 end
