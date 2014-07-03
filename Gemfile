@@ -42,3 +42,5 @@ gem 'twitter-bootstrap-rails'
 
 gem 'sidekiq'
 gem 'thin'
+
+gem 'devise'

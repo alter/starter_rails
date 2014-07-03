@@ -1,4 +1,5 @@
 class TerritoriesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_territory, only: [:show, :edit, :update, :destroy]
 
   # GET /territories

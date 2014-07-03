@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'home/index'
 
+  devise_for :users
+  devise_for :admins
+
+  get 'home/index'
   get 'home/tasks'
 
   resources :jobs
-
   resources :servers
-
   resources :jobtypes
-
   resources :territories
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,4 +1,5 @@
 class JobtypesController < ApplicationController
+  before_action :authenticate_admin!
   before_action :set_jobtype, only: [:show, :edit, :update, :destroy]
 
   # GET /jobtypes
